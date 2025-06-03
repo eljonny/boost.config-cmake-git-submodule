@@ -11,4 +11,4 @@ project(boost_config VERSION "${BOOST_SUPERPROJECT_VERSION}" LANGUAGES CXX)
 add_library(boost_config INTERFACE)
 add_library(Boost::config ALIAS boost_config)
 
-target_include_directories(boost_config INTERFACE include)
+target_include_directories(boost_config INTERFACE $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>)
